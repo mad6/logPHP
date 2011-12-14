@@ -44,8 +44,8 @@ class LoggerConfig
     {
         if (!Priority::isValidPriority($priority))
         {
-            throw new Exception(sprintf('Invalid log level value "%s".',
-                            $priority));
+            throw new LoggerConfigException(
+                    sprintf('Invalid log level value "%s".', $priority));
         }
 
         $this->level = (int) $priority;
@@ -68,7 +68,7 @@ class LoggerConfig
     {
         if (!is_string($format) || empty($format))
         {
-            throw new Exception('Time format is empty.');
+            throw new LoggerConfigException('Time format is empty.');
         }
 
         $this->time_format = (string) $format;

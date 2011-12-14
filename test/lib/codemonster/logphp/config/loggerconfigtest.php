@@ -42,7 +42,8 @@ class LoggerConfigTest extends \PHPUnit_Framework_TestCase
             self::assertEquals($p, $this->object->getLogLevel());
         }
 
-        $this->setExpectedException('\\codemonster\\logphp\\config\\Exception');
+        $this->setExpectedException(
+                '\\codemonster\\logphp\\config\\LoggerConfigException');
         $this->object->setLogLevel('invalid log level');
     }
 
@@ -62,7 +63,8 @@ class LoggerConfigTest extends \PHPUnit_Framework_TestCase
         self::assertEquals($format, $this->object->getTimeFormat());
 
         $format = '';
-        $this->setExpectedException('\\codemonster\\logphp\\config\\Exception');
+        $this->setExpectedException(
+                '\\codemonster\\logphp\\config\\LoggerConfigException');
         $this->object->setTimeFormat($format);
     }
 

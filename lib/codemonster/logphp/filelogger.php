@@ -79,7 +79,7 @@ class FileLogger extends Logger
 
         if (!is_writable($dir))
         {
-            throw new Exception(sprintf('Logger destination directory "%s" ' .
+            throw new LoggerException(sprintf('Logger destination directory "%s" ' .
                             'is not writable.', $dir));
         }
 
@@ -88,7 +88,7 @@ class FileLogger extends Logger
 
         if ($this->fileptr === false)
         {
-            throw new Exception(sprintf('Unable to open the log file "%s" ' .
+            throw new LoggerException(sprintf('Unable to open the log file "%s" ' .
                             'for writing.', $filename));
         }
 

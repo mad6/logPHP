@@ -10,7 +10,7 @@ namespace codemonster\logphp;
  * 
  * @package logPHP
  */
-class Exception extends \Exception
+class LoggerException extends \Exception
 {
     
 }

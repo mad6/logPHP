@@ -52,7 +52,7 @@ class FileLoggerConfig extends LoggerConfig
     {
         if (empty($filename))
         {
-            throw new Exception('Log filename is empty');
+            throw new LoggerConfigException('Log filename is empty');
         }
 
         $this->filename = (string) $filename;

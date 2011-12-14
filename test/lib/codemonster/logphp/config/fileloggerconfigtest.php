@@ -43,14 +43,16 @@ class FileLoggerConfigTest extends \PHPUnit_Framework_TestCase
         self::assertEquals($filename, $object->getFilename());
         self::assertEquals($level, $object->getLogLevel());
 
-        $this->setExpectedException('\\codemonster\\logphp\\config\\Exception');
+        $this->setExpectedException(
+                '\\codemonster\\logphp\\config\\LoggerConfigException');
         $object = new FileLoggerConfig('');
     }
 
     public function testConstructInvalidLevel()
     {
         $filename = __DIR__ . DIRECTORY_SEPARATOR . 'test.log';
-        $this->setExpectedException('\\codemonster\\logphp\\config\\Exception');
+        $this->setExpectedException(
+                '\\codemonster\\logphp\\config\\LoggerConfigException');
         $object = new FileLoggerConfig($filename, 99999);
     }
 
@@ -60,7 +62,8 @@ class FileLoggerConfigTest extends \PHPUnit_Framework_TestCase
         $this->object->setFilename($filename);
         self::assertEquals($filename, $this->object->getFilename());
 
-        $this->setExpectedException('\\codemonster\\logphp\\config\\Exception');
+        $this->setExpectedException(
+                '\\codemonster\\logphp\\config\\LoggerConfigException');
         $this->object->setFilename('');
     }
 

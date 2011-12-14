@@ -43,7 +43,7 @@ abstract class Logger
     {
         if (!Priority::isValidPriority($level))
         {
-            throw new Exception(sprintf('Invalid log level value "%s".', $level));
+            throw new LoggerException(sprintf('Invalid log level value "%s".', $level));
         }
 
         $this->level = $level;

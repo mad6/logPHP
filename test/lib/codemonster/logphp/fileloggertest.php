@@ -50,7 +50,7 @@ class FileLoggerTest extends LoggerTest
     {
         $dir = sys_get_temp_dir();
         $config = new config\FileLoggerConfig($dir . DIRECTORY_SEPARATOR . '');
-        $this->setExpectedException('\\codemonster\\logphp\\Exception');
+        $this->setExpectedException('\\codemonster\\logphp\\LoggerException');
         $logger = new FileLogger($config);
     }
 

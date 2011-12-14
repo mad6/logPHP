@@ -6,8 +6,7 @@
 use codemonster\logphp;
 
 // set include path and register spl_autoload function
-$path = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' .
-        DIRECTORY_SEPARATOR . 'lib';
+$path = __DIR__ . DIRECTORY_SEPARATOR . 'lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 spl_autoload_register();
 
@@ -24,6 +23,10 @@ catch (LoggerException $exc)
 }
 
 // log messages
-$logger->info('Info message');
-$logger->err('Err message');
-$logger->debug('Debug message');
+$logger->debug('Initialize logger');
+$logger->debug('Application start');
+$logger->err('No value for "apikey" in configuration');
+$logger->err('API module disabled');
+$logger->emerg('Aplication shutdown required');
+$logger->debug('Application shutdown');
+$logger->debug('Shutdown logger');

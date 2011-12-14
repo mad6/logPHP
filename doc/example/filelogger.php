@@ -1,8 +1,8 @@
 <?php
+
 /**
  * Example of using the FileLogger class.
  */
-
 use codemonster\logphp;
 
 // set include path and register spl_autoload function
@@ -16,10 +16,11 @@ try
 {
     $dir = sys_get_temp_dir();
     $filename = $dir . DIRECTORY_SEPARATOR . 'test.log';
-    $config = new logphp\config\FileLoggerConfig($filename, logphp\Priority::DEBUG);
+    $config = new logphp\config\FileLoggerConfig($filename,
+                    logphp\Priority::DEBUG);
     $logger = new logphp\FileLogger($config);
 }
-catch (Exception $exc)
+catch (LoggerException $exc)
 {
     echo $exc->getMessage() . PHP_EOL;
     exit(1);

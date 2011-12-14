@@ -33,7 +33,7 @@ abstract class LoggerTest extends \PHPUnit_Framework_TestCase
             }
         }
 
-        $this->setExpectedException('\\codemonster\\logphp\\Exception');
+        $this->setExpectedException('\\codemonster\\logphp\\LoggerException');
         $this->object->setLogLevel(8);
     }
 

@@ -30,7 +30,7 @@ try
     $testlogger = new TestLogger();
     $logger = new logphp\LoggerWrapper($testlogger, $config);
 }
-catch (Exception $exc)
+catch (LoggerException $exc)
 {
     echo $exc->getMessage() . PHP_EOL;
     exit(1);
