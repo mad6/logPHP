@@ -15,7 +15,7 @@ function phpunitAutoload($class)
     {
         require_once $filename;
     }
-    else if (strpos($class, 'Test') !== false)
+    else if (substr($class, -4) == 'Test')
     {
         $testfile = __DIR__ . DIRECTORY_SEPARATOR .
                 'lib' . DIRECTORY_SEPARATOR . $classpath;

@@ -34,6 +34,7 @@ class FileLoggerConfig extends LoggerConfig
     private $dir_mode;
 
     /**
+     * @param string $filename Filename with path
      * @param int $level Logging level ie. value from logphp\Priority class
      */
     public function __construct($filename, $level = Priority::INFO)
@@ -45,8 +46,8 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Sets the log filename.
-     * @param string $filename Filename 
+     * Sets the log path and filename.
+     * @param string $filename Filename with path
      */
     public function setFilename($filename)
     {
@@ -59,7 +60,7 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Gets the log filename.
+     * Gets the log path and filename.
      * @return string
      */
     public function getFilename()
@@ -68,7 +69,7 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Sets the log file mode.
+     * Sets the log creation file mode.
      * @param int $mode File mode ex. 0666 (octal value)
      */
     public function setFileMode($mode)
@@ -77,7 +78,7 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Gets the log file mode.
+     * Gets the log creation file mode.
      * @return int 
      */
     public function getFileMode()
@@ -86,7 +87,7 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Sets the directory mode.
+     * Sets the directory creation mode.
      * @param int $mode Directory mode ex. 0777 (octal value)
      */
     public function setDirMode($mode)
@@ -95,7 +96,7 @@ class FileLoggerConfig extends LoggerConfig
     }
 
     /**
-     * Gets the directory mode.
+     * Gets the directory creation mode.
      * @return int 
      */
     public function getDirMode()
